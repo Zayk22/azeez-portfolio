@@ -339,3 +339,34 @@ const buildObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
 buildSections.forEach(section => buildObserver.observe(section));
+// ============================================
+// CONTACT FORM
+// ============================================
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        formStatus.textContent = 'Sending...';
+        formStatus.style.color = 'var(--text-muted)';
+        
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+            formStatus.style.color = '#10b981';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = 'Something went wrong. Please try again.';
+            formStatus.style.color = '#ef4444';
+        }
+    });
+}

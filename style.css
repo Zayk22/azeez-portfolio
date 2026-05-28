@@ -1350,7 +1350,42 @@ html {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
+/* ============================================
+   3D SCROLL BUILD ANIMATION
+   ============================================ */
+.build-in {
+    /* Children start hidden and scattered */
+}
 
+.build-in > * {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Different scatter directions for variety */
+.build-in > *:nth-child(odd) {
+    transform: translateX(-40px) rotateY(10deg);
+}
+
+.build-in > *:nth-child(even) {
+    transform: translateX(40px) rotateY(-10deg);
+}
+
+/* When section becomes visible, assemble */
+.build-in.visible > * {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+}
+
+/* Stagger delays via JS will be applied inline, but we can add a default */
+.build-in.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.build-in.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.build-in.visible > *:nth-child(3) { transition-delay: 0.15s; }
+.build-in.visible > *:nth-child(4) { transition-delay: 0.2s; }
+.build-in.visible > *:nth-child(5) { transition-delay: 0.25s; }
+.build-in.visible > *:nth-child(6) { transition-delay: 0.3s; }
+.build-in.visible > *:nth-child(7) { transition-delay: 0.35s; }
+.build-in.visible > *:nth-child(8) { transition-delay: 0.4s; }
 /* ============================================
    RESPONSIVE
    ============================================ */

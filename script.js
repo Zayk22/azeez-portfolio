@@ -324,3 +324,18 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 1000);
+// ============================================
+// 3D BUILD-IN ON SCROLL
+// ============================================
+const buildSections = document.querySelectorAll('.build-in');
+
+const buildObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            buildObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+buildSections.forEach(section => buildObserver.observe(section));

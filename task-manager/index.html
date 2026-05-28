@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow · Modern Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1><i class="fas fa-check-circle" style="color: var(--accent);"></i> TaskFlow</h1>
+            <p class="app-subtitle">Organize your day, achieve your goals</p>
+        </header>
+
+        <!-- Stats Dashboard -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-value" id="totalTasks">0</span>
+                <span class="stat-label">Total Tasks</span>
+                <i class="fas fa-tasks stat-icon"></i>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+                <i class="fas fa-check-circle stat-icon"></i>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="completionRate">0%</span>
+                <span class="stat-label">Success Rate</span>
+                <i class="fas fa-chart-line stat-icon"></i>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="dueToday">0</span>
+                <span class="stat-label">Due Today</span>
+                <i class="fas fa-clock stat-icon"></i>
+            </div>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="task-form">
+            <h2 class="form-title">Create New Task</h2>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="What needs to be done?" class="task-input">
+                
+                <div class="input-row">
+                    <div class="input-field">
+                        <label><i class="far fa-calendar"></i> Due Date</label>
+                        <input type="date" id="dueDate">
+                    </div>
+                    
+                    <div class="input-field">
+                        <label><i class="far fa-clock"></i> Time</label>
+                        <input type="time" id="taskTime" class="time-input">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-field">
+                        <label><i class="far fa-folder"></i> Category</label>
+                        <select id="taskCategory">
+                            <option value="general">📋 General</option>
+                            <option value="work">💼 Work</option>
+                            <option value="personal">🏠 Personal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-field">
+                        <label><i class="fas fa-flag"></i> Priority</label>
+                        <select id="taskPriority" class="priority-select">
+                            <option value="low">🟢 Low</option>
+                            <option value="medium" selected>🟡 Medium</option>
+                            <option value="high">🔴 High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="addTaskBtn" class="add-task-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filters-section">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="general">📋 General</button>
+                <button class="filter-btn" data-filter="work">💼 Work</button>
+                <button class="filter-btn" data-filter="personal">🏠 Personal</button>
+            </div>
+        </div>
+
+        <!-- Tasks List -->
+        <div class="tasks-container">
+            <ul id="tasks"></ul>
+        </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div id="reminderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-bell"></i> Upcoming Tasks</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <ul id="reminderList" class="reminder-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- SortableJS for drag-and-drop -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

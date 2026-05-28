@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | ZayStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Zay<span>Store</span></a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i> <span class="cart-counter"></span></a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order-tracking.html">Track Order</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--success); margin-bottom: 1rem;"></i>
+      <h1>Thank You for Your Order!</h1>
+      <p>Your order has been placed successfully. We've sent a confirmation email with your order details.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="tracking-card" style="margin-bottom: 2rem;">
+        <div class="order-header">
+          <div class="order-number">
+            Order #<span id="order-id"></span>
+          </div>
+          <div class="order-date" id="order-date"></div>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h3>Customer Information</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div>
+              <p><strong>Name:</strong> <span id="customer-name"></span></p>
+              <p><strong>Email:</strong> <span id="customer-email"></span></p>
+            </div>
+            <div>
+              <p><strong>Phone:</strong> <span id="customer-phone"></span></p>
+              <p><strong>Address:</strong> <span id="customer-address"></span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h3>Payment Method</h3>
+          <p id="payment-method"></p>
+          <p class="text-muted" id="payment-details"></p>
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+          <h3>Order Summary</h3>
+          <div class="order-items" id="order-items"></div>
+          <div class="order-total" id="order-total"></div>
+        </div>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="order-tracking.html" class="btn btn-primary">
+            <i class="fas fa-truck"></i> Track Your Order
+          </a>
+          <a href="products.html" class="btn btn-secondary">
+            <i class="fas fa-shopping-bag"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ZayStore</h3>
+          <p>Premium e-commerce for quality products</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> support@zaystore.com</p>
+          <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ZayStore. All rights reserved. Built by Azeez Olamilekan</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <script src="order-confirmation.js"></script>
+</body>
+</html>

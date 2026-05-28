@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Bug Escape | Debug Your Way Out</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <div class="nav-bar">
+    <a href="https://zaydev.netlify.app" class="portfolio-link" target="_blank">
+      <span class="link-icon">⌨️</span> View Portfolio
+    </a>
+    <button id="endGameBtn" class="nav-btn danger-btn">⏹️ End Game</button>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    
+    <!-- Start Screen Overlay -->
+    <div class="start-screen" id="startScreen">
+      <div class="start-content">
+        <h1 class="game-title">CODE BUG ESCAPE</h1>
+        <div class="instructions">
+          <div class="instruction-item">
+            <span class="key-icon">← ↑ → ↓</span>
+            <span>Move player</span>
+          </div>
+          <div class="instruction-item">
+            <span class="key-icon">P</span>
+            <span>Pause game</span>
+          </div>
+          <div class="instruction-item">
+            <span class="bug-icon">🐛</span>
+            <span>Avoid bugs</span>
+          </div>
+          <div class="instruction-item">
+            <span class="power-icon">☕</span>
+            <span>Collect coffee (speed boost)</span>
+          </div>
+        </div>
+        <button id="startBtn" class="start-btn">START GAME</button>
+        <div class="high-score" id="startScreenHighScore">🏆 High Score: 0</div>
+      </div>
+    </div>
+
+    <!-- Pause Screen -->
+    <div class="pause-screen" id="pauseScreen">
+      <h2>PAUSED</h2>
+      <p>Press P to resume</p>
+    </div>
+
+    <!-- Game UI -->
+    <div class="game-ui">
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-label">SCORE</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">HIGH SCORE</span>
+          <span class="stat-value" id="highScore">0</span>
+        </div>
+      </div>
+      <div class="power-indicator" id="powerIndicator">
+        <span class="power-text">☕ POWER-UP ACTIVE</span>
+        <div class="power-timer" id="powerTimer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

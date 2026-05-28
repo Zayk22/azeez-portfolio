@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking | ZayStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Zay<span>Store</span></a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart <i class="fas fa-shopping-cart"></i> <span class="cart-counter"></span></a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="order-tracking.html" class="active">Track Order</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Track Your Order</h1>
+      <p>Check the real-time status of your delivery</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="tracking-container">
+      <div class="tracking-card" style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1.5rem;">Find Your Order</h3>
+        <form id="order-search-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="order-number">Order Number</label>
+              <input type="text" id="order-number" class="form-control" placeholder="e.g., 1234567890" required>
+            </div>
+            <div class="form-group">
+              <label for="order-email">Email Address</label>
+              <input type="email" id="order-email" class="form-control" placeholder="used during checkout" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-search"></i> Track Order
+          </button>
+        </form>
+      </div>
+
+      <div id="order-tracking-container" style="display: none;"></div>
+
+      <div class="empty-cart" id="no-orders-message" style="display: none;">
+        <i class="fas fa-box-open"></i>
+        <h2>No Orders Found</h2>
+        <p>We couldn't find any orders matching your search criteria.</p>
+        <a href="products.html" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ZayStore</h3>
+          <p>Premium e-commerce for quality products</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> support@zaystore.com</p>
+          <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ZayStore. All rights reserved. Built by Azeez Olamilekan</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <script src="tracking.js"></script>
+</body>
+</html>

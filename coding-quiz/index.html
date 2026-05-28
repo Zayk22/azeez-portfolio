@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz Master | Test Your Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-code"></i> JS Quiz Master</h1>
+            <div class="header-right">
+                <div class="timer" id="timerDisplay">
+                    <i class="fas fa-clock"></i> <span id="time">60</span>s
+                </div>
+                <div class="progress-section">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="question-counter" id="questionCounter">
+                        <span id="currentQ">1</span>/<span id="totalQs">20</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Start Screen -->
+        <div class="start-screen" id="startScreen">
+            <div class="start-content">
+                <i class="fas fa-brain start-icon"></i>
+                <h2>Ready to Challenge Yourself?</h2>
+                <p>Test your JavaScript knowledge with 20 questions. Incorrect answers will penalize your time by 10 seconds!</p>
+                <div class="feature-list">
+                    <span><i class="fas fa-check-circle"></i> 20 Questions</span>
+                    <span><i class="fas fa-hourglass-half"></i> 60 Seconds</span>
+                    <span><i class="fas fa-trophy"></i> High Scores</span>
+                </div>
+                <button id="startBtn" class="primary-btn">Start Quiz <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container" id="quizContainer" style="display: none;">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div class="feedback" id="feedback"></div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results" id="resultsScreen" style="display: none;">
+            <div class="results-content">
+                <i class="fas fa-trophy results-icon"></i>
+                <h2>Quiz Complete!</h2>
+                <div class="score-display">
+                    <span class="score-label">Your Score</span>
+                    <span class="score-value" id="score">0</span>
+                    <span class="score-max">/20</span>
+                </div>
+                <div class="performance-message" id="performanceMessage"></div>
+                
+                <form id="scoreForm" class="score-form">
+                    <input type="text" id="initials" placeholder="Enter initials" maxlength="3" autocomplete="off">
+                    <button type="submit" class="primary-btn">Save Score</button>
+                </form>
+                
+                <div class="high-scores">
+                    <h3><i class="fas fa-medal"></i> High Scores</h3>
+                    <ol id="highScoresList"></ol>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="restartBtn" class="secondary-btn"><i class="fas fa-redo-alt"></i> Play Again</button>
+                    <a href="#" id="portfolioBtn" class="portfolio-btn"><i class="fas fa-briefcase"></i> View Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

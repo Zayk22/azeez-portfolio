@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Discovery | Explore Your Favorite Anime</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-top">
+                <div class="logo-area">
+                    <h1 class="site-title">
+                        <i class="fas fa-dragon"></i> 
+                        Anime Discovery
+                    </h1>
+                    <p class="site-subtitle">Search and explore your favorite anime</p>
+                </div>
+                
+                </a>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search for anime (e.g., Naruto, One Piece, Attack on Titan)..."
+                        autocomplete="off"
+                    >
+                    <button id="clearSearch" class="clear-search" title="Clear search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <select id="genreFilter" class="filter-select">
+                        <option value="">All Genres</option>
+                    </select>
+                    
+                    <select id="typeFilter" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="tv">TV Series</option>
+                        <option value="movie">Movie</option>
+                        <option value="ova">OVA</option>
+                        <option value="special">Special</option>
+                        <option value="ona">ONA</option>
+                        <option value="music">Music</option>
+                    </select>
+                    
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="airing">Currently Airing</option>
+                        <option value="complete">Completed</option>
+                        <option value="upcoming">Upcoming</option>
+                    </select>
+                    
+                    <select id="ratingFilter" class="filter-select">
+                        <option value="">All Ratings</option>
+                        <option value="g">G - All Ages</option>
+                        <option value="pg">PG - Children</option>
+                        <option value="pg13">PG-13 - Teens 13+</option>
+                        <option value="r17">R - 17+ (Violence & Profanity)</option>
+                        <option value="r">R+ - Mild Nudity</option>
+                        <option value="rx">Hentai</option>
+                    </select>
+                    
+                    <select id="yearFilter" class="filter-select">
+                        <option value="">All Years</option>
+                    </select>
+                    
+                    <select id="seasonFilter" class="filter-select">
+                        <option value="">All Seasons</option>
+                        <option value="winter">Winter</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                    </select>
+                </div>
+                
+                <div class="filter-actions">
+                    <span id="resultsCount" class="results-count">Loading...</span>
+                    <button id="resetFilters" class="reset-filters">
+                        <i class="fas fa-undo-alt"></i> Reset Filters
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Anime Grid -->
+            <div class="anime-grid" id="animeGrid"></div>
+
+            <!-- Load More Container -->
+            <div class="load-more-container" id="loadMoreContainer">
+                <button id="loadMoreBtn" class="load-more-btn">
+                    <span class="btn-text">Load More Anime</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loading">
+                <div class="spinner"></div>
+                <p>Discovering amazing anime...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-search"></i>
+                <h3>No results found 😢</h3>
+                <p>Try adjusting your search or filters</p>
+                <button id="clearEmptyFilters" class="clear-filters-btn">
+                    Clear all filters
+                </button>
+            </div>
+
+            <!-- Error State -->
+            <div class="error-state" id="errorState">
+                <i class="fas fa-exclamation-circle"></i>
+                <h3>Something went wrong</h3>
+                <p>Please check your connection and try again</p>
+                <button id="retryButton" class="retry-btn">
+                    <i class="fas fa-redo-alt"></i> Try Again
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>Built by <span class="highlight">Azeez Olamilekan</span></p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername" target="_blank" class="footer-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <span class="separator">•</span>
+                <span class="api-credit">Data: Jikan API</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

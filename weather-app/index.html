@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WeatherSphere · Forecast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="wi wi-day-sunny"></i> Weather<span>Sphere</span></h1>
+            <p class="app-subtitle">Real-time weather & 5-day forecast</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Search for a city..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn">
+                    <span>Search</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="unit-toggle">
+            <button id="celsiusBtn" class="active">°C</button>
+            <button id="fahrenheitBtn">°F</button>
+        </div>
+
+        <div class="weather-card" id="weatherCard">
+            <div class="weather-main">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="wi wi-day-sunny"></i>
+                </div>
+                <div class="weather-temp">
+                    <span class="temp-value" id="temperature">--</span>
+                    <span class="temp-unit" id="tempUnit">°C</span>
+                </div>
+            </div>
+            
+            <div class="weather-details">
+                <h2 id="cityName">--</h2>
+                <p class="weather-desc" id="weatherDesc">--</p>
+                
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="wi wi-humidity"></i>
+                        <div>
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity">--</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="wi wi-strong-wind"></i>
+                        <div>
+                            <span class="detail-label">Wind</span>
+                            <span class="detail-value" id="windSpeed">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMsg"></div>
+
+        <div class="forecast-container" id="forecastContainer">
+            <h3><i class="wi wi-day-sunny"></i> 5-Day Forecast</h3>
+            <div class="forecast-grid" id="forecastGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

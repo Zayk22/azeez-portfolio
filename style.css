@@ -113,9 +113,6 @@ html {
 /* ============================================
    NAVIGATION
    ============================================ */
-/* ============================================
-   NAVIGATION
-   ============================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -215,6 +212,7 @@ html {
 [data-theme="light"] .theme-toggle .fa-sun::before {
     content: "\f186";
 }
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -406,6 +404,7 @@ html {
     font-weight: 400 !important;
     letter-spacing: 0 !important;
 }
+
 /* ============================================
    ABOUT
    ============================================ */
@@ -1149,53 +1148,62 @@ html {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+
 .footer-time {
     color: var(--text-muted);
     font-size: 0.8rem;
     letter-spacing: 0.5px;
 }
+
 /* ============================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR — Desktop Only
    ============================================ */
-.cursor-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--white);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
+.cursor-dot, .cursor-ring {
+    display: none;
 }
 
-.cursor-ring {
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
+@media (hover: hover) and (pointer: fine) {
+    .cursor-dot {
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: var(--white);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transition: transform 0.1s ease;
+    }
 
-.cursor-ring.hover {
-    width: 48px;
-    height: 48px;
-    border-color: var(--white);
-}
+    .cursor-ring {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    }
 
-.cursor-dot.hover {
-    transform: scale(0.5);
-}
+    .cursor-ring.hover {
+        width: 48px;
+        height: 48px;
+        border-color: var(--white);
+    }
 
-/* Hide default cursor */
-body {
-    cursor: none;
-}
+    .cursor-dot.hover {
+        transform: scale(0.5);
+    }
 
-a, button, .btn, .project-card, .service-card, .experience-card, .education-card, .stat-card, .contact-card, input, textarea {
-    cursor: none;
+    body {
+        cursor: none;
+    }
+
+    a, button, .btn, .project-card, .service-card, .experience-card, .education-card, .stat-card, .contact-card, input, textarea {
+        cursor: none;
+    }
 }
 
 /* ============================================
@@ -1258,6 +1266,7 @@ a, button, .btn, .project-card, .service-card, .experience-card, .education-card
     50% { width: 70%; }
     100% { width: 100%; }
 }
+
 /* ============================================
    BACK TO HOME BUTTON
    ============================================ */
@@ -1281,6 +1290,67 @@ a, button, .btn, .project-card, .service-card, .experience-card, .education-card
     border-color: var(--white);
     color: var(--white);
 }
+
+/* ============================================
+   CURRENTLY
+   ============================================ */
+.currently {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.currently-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.currently-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.currently-icon {
+    font-size: 1.5rem;
+    color: var(--white);
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.currently-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.currently-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   GITHUB
+   ============================================ */
+.github-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.github-contributions {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -1321,7 +1391,7 @@ a, button, .btn, .project-card, .service-card, .experience-card, .education-card
     }
 
     .nav-menu.active {
-        left: 0;
+                left: 0;
     }
 
     .hero-buttons {
@@ -1382,61 +1452,4 @@ a, button, .btn, .project-card, .service-card, .experience-card, .education-card
         font-size: 2rem;
     }
 }
-/* ============================================
-   CURRENTLY
-   ============================================ */
-.currently {
-    padding: 80px 0;
-    background: var(--bg-dark);
-}
-
-.currently-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.currently-item {
-    text-align: center;
-    padding: 2rem;
-}
-
-.currently-icon {
-    font-size: 1.5rem;
-    color: var(--white);
-    opacity: 0.6;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.currently-label {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-}
-
-.currently-item p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-/* ============================================
-   GITHUB
-   ============================================ */
-.github-section {
-    padding: 80px 0;
-    background: var(--bg-dark);
-}
-
-.github-contributions {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background: var(--bg-card);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
+       

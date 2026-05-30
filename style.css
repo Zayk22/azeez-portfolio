@@ -1386,6 +1386,39 @@ html {
 .build-in.visible > *:nth-child(6) { transition-delay: 0.3s; }
 .build-in.visible > *:nth-child(7) { transition-delay: 0.35s; }
 .build-in.visible > *:nth-child(8) { transition-delay: 0.4s; }
+
+/* ============================================
+   PAGE LOADER – GAMING ICON SLIDE
+   ============================================ */
+.loader-icon {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    animation: slideIcon 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes slideIcon {
+    0% { transform: translateX(-20px); }
+    100% { transform: translateX(20px); }
+}
+
+/* About Social Links */
+.about-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-social-link {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.about-social-link:hover {
+    color: var(--white);
+}
 /* ============================================
    RESPONSIVE
    ============================================ */

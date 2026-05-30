@@ -1,6 +1,3 @@
-Here's the corrected `index.html` with the working contact form integrated into the contact section. I've replaced the old form and put the new one in its proper place. The access key has been added as well.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +16,9 @@ Here's the corrected `index.html` with the working contact form integrated into 
     <!-- Page Loader -->
     <div class="loader">
         <div class="loader-content">
-            <div class="loader-logo">AZ</div>
+            <div class="loader-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
             <div class="loader-bar">
                 <div class="loader-progress"></div>
             </div>
@@ -66,6 +65,7 @@ Here's the corrected `index.html` with the working contact form integrated into 
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Let's Talk</a>
             </div>
+            
         </div>
         <div class="hero-stats">
             <div class="stat-item">
@@ -74,7 +74,7 @@ Here's the corrected `index.html` with the working contact form integrated into 
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-number">11+</span>
+                <span class="stat-number">12+</span>
                 <span class="stat-label">Projects Built</span>
             </div>
             <div class="stat-divider"></div>
@@ -113,13 +113,21 @@ Here's the corrected `index.html` with the working contact form integrated into 
                 </div>
                 <div class="about-text">
                     <h3>I'm Azeez Olamilekan Adeleke</h3>
-                    <p class="about-paragraph">I'm a dedicated developer who transforms complex problems into elegant, functional web solutions. With over two years of hands-on experience building real-world applications, I've developed a deep appreciation for clean code, intuitive user interfaces, and robust functionality.</p>
-                    <p class="about-paragraph">My journey in web development has been driven by curiosity and a relentless desire to create digital experiences that make a difference. I specialize in building complete web applications from the ground up, handling everything from database design to responsive frontend interfaces.</p>
-                    <p class="about-paragraph">What drives me is the challenge of understanding user needs and translating them into technical solutions. I approach every project with a problem-solving mindset, focusing on creating applications that are both technically sound and genuinely useful.</p>
+                    <p class="about-paragraph">
+                        I'm a Frontend Engineer focused on building polished, responsive, and performance-driven web applications. I work with React, Next.js, TypeScript, Tailwind CSS, and modern animation tools to turn ideas into clean, usable digital products.
+                    </p>
+                    <p class="about-paragraph">
+                        With 2+ years of hands-on experience, I've built projects across streaming, analytics, dashboards, and business websites. I care about clean code, strong UI details, accessibility, and smooth user experiences.
+                    </p>
                     <div class="about-highlights">
                         <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Problem Solver</span></div>
                         <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Continuous Learner</span></div>
                         <div class="highlight-item"><i class="fas fa-check-circle"></i><span>Detail Oriented</span></div>
+                    </div>
+                    <div class="about-social">
+                        <a href="https://github.com/Zayk22" class="about-social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/olamilekan-azeez-aa2646311/" class="about-social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="about-social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                     <div class="about-buttons">
                         <a href="#contact" class="btn btn-primary about-btn">Hire Me</a>
@@ -144,10 +152,26 @@ Here's the corrected `index.html` with the working contact form integrated into 
                 <p class="section-subtitle">What I can do for you</p>
             </div>
             <div class="services-grid">
-                <div class="service-card"><i class="fas fa-code"></i><h3>Website Development</h3><p>Building responsive, modern websites</p></div>
-                <div class="service-card"><i class="fas fa-server"></i><h3>Hosting & Maintenance</h3><p>Managing and maintaining live websites</p></div>
-                <div class="service-card"><i class="fas fa-mobile-alt"></i><h3>Mobile-Responsive Design</h3><p>Ensuring perfect display on all devices</p></div>
-                <div class="service-card"><i class="fas fa-laptop-code"></i><h3>Software Development</h3><p>Building scalable applications</p></div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Modern Website Development</h3>
+                    <p>I build fast, responsive websites for businesses, portfolios, and digital products.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Deployment & Maintenance</h3>
+                    <p>I deploy, optimize, and maintain websites so they stay fast, stable, and reliable.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive UI Engineering</h3>
+                    <p>I create layouts that feel smooth and consistent across mobile, tablet, and desktop.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend Application Development</h3>
+                    <p>I develop interactive web apps with clean components, API integration, and scalable UI architecture.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -207,19 +231,49 @@ Here's the corrected `index.html` with the working contact form integrated into 
             </div>
             <div class="skills-content">
                 <div class="skills-category">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><div class="skill-info"><span>HTML5</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div></div>
-                        <div class="skill-item"><div class="skill-info"><span>CSS3</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
-                        <div class="skill-item"><div class="skill-info"><span>JavaScript</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div></div>
-                        <div class="skill-item"><div class="skill-info"><span>React</span><span>75%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div></div>
+                    <h3>Core Frontend</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
                     </div>
                 </div>
                 <div class="skills-category">
-                    <h3>Tools & Technologies</h3>
+                    <h3>Styling & UI</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag">Git</span><span class="tech-tag">GitHub</span><span class="tech-tag">VS Code</span><span class="tech-tag">Figma</span>
-                        <span class="tech-tag">npm</span><span class="tech-tag">Responsive Design</span><span class="tech-tag">REST APIs</span><span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">Framer Motion</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Data & APIs</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">TMDB API</span>
+                        <span class="tech-tag">Jikan API</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Tools</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">GitHub</span>
+                        <span class="tech-tag">VS Code</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">npm</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Learning Now</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">System Design</span>
+                        <span class="tech-tag">GSAP</span>
                     </div>
                 </div>
             </div>
@@ -280,6 +334,7 @@ Here's the corrected `index.html` with the working contact form integrated into 
                 <p class="section-subtitle">Real-world applications I've built</p>
             </div>
             <div class="projects-grid">
+                <!-- FRAMEX — Featured -->
                 <div class="project-card featured">
                     <div class="project-image">
                         <img src="./screenshots/Framex.png" alt="FRAMEX Streaming Platform">
@@ -293,12 +348,14 @@ Here's the corrected `index.html` with the working contact form integrated into 
                     <div class="project-info">
                         <div class="project-badge">Featured</div>
                         <h3>FRAMEX — Cinematic Streaming Platform</h3>
-                        <p>A premium streaming experience with TMDB API, Jikan anime API, custom video player, Clerk authentication, and cinematic UI. Built with Next.js, TypeScript, and Tailwind CSS.</p>
+                        <p>FRAMEX is a cinematic streaming platform that lets users discover movies, TV shows, and anime through a polished, responsive interface. I built the frontend architecture with Next.js, TypeScript, Tailwind CSS, and Framer Motion, integrated TMDB and Jikan APIs, added Clerk authentication, and designed a custom video player experience.</p>
                         <div class="project-tech">
                             <span>Next.js 14</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Clerk Auth</span><span>TMDB API</span><span>Jikan API</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- FOOT PREDICT -->
                 <div class="project-card">
                     <div class="project-image">
                         <img src="./screenshots/Foot-predict.png" alt="Foot Predict Dashboard">
@@ -311,33 +368,35 @@ Here's the corrected `index.html` with the working contact form integrated into 
                     </div>
                     <div class="project-info">
                         <h3>Foot Predict — Football Analytics Dashboard</h3>
-                        <p>A full-stack football prediction dashboard with real-time data, match analytics, and an immersive sports interface with animated charts.</p>
+                        <p>Foot Predict is a football analytics dashboard for exploring match data, predictions, and performance insights through a responsive sports-focused interface. I built interactive dashboard screens, animated charts, API-driven match data views, and a mobile-friendly layout using Next.js, TypeScript, Tailwind CSS, and Chart.js.</p>
                         <div class="project-tech">
                             <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Chart.js</span><span>REST APIs</span><span>Responsive</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- LINGUAFLOW -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="./Images/erik-mclean-QzpgqElvSiA-unsplash.jpg" alt="VibeNow Music App">
+                        <img src="./screenshots/Linguaflow.png" alt="LinguaFlow Language Platform">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="./Vibenow music/index.html" target="_blank" class="project-link"><i class="fas fa-eye"></i> Live</a>
-                                <a href="https://github.com/Zayk22/Music-streaming-app/blob/main/index.html" class="project-link"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://linguaflow-omega.vercel.app/" target="_blank" class="project-link"><i class="fas fa-eye"></i> Live Demo</a>
+                                <a href="https://github.com/Zayk22/linguaflow" class="project-link"><i class="fab fa-github"></i> Source Code</a>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>VibeNow Music App</h3>
-                        <p>A modern music streaming web app with real-time search, API integration, and smooth responsive listening experience.</p>
+                        <h3>LinguaFlow — Premium Language Learning Platform</h3>
+                        <p>LinguaFlow is an immersive language learning platform with multi-language support, onboarding, dynamic dashboards, and achievement systems. I built the frontend with React, TypeScript, Framer Motion, and Zustand, implementing a gamified progression system and responsive mobile experience.</p>
                         <div class="project-tech">
-                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>REST API</span>
+                            <span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Zustand</span><span>Lucide Icons</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="view-all-container">
-                <a href="./projects.html" class="btn btn-primary view-all-btn">View All 11 Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="./projects.html" class="btn btn-primary view-all-btn">View All 12 Projects <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -378,7 +437,7 @@ Here's the corrected `index.html` with the working contact form integrated into 
                 <div class="footer-name">Azeez Olamilekan Adeleke</div>
                 <div class="footer-social">
                     <a href="https://github.com/Zayk22" class="footer-social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/olamilekan-azeez-aa2646311" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/olamilekan-azeez-aa2646311/" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
                     <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="footer-time" id="footerTime"></div>
